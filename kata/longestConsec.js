@@ -14,7 +14,7 @@ function longestConsec(strarr, k) {
   if (k <= 0 || k > strarr.length) return '';
 
   let start = strarr.map((a, i) => i).reduce((a, b) => {
-    return strarr.slice(a, a + k).join('').length > strarr.slice(b, b + k).join('').length ? a : b;
+    return strarr.slice(a, a + k).join('').length >= strarr.slice(b, b + k).join('').length ? a : b;
   }, 0);
 
   return strarr.slice(start, start + k).join('');
